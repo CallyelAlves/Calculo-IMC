@@ -19,11 +19,12 @@ const classificationIMC = {
 
 const calc = () => {
 
+    weight = getIds.weight.value
+    height = getIds.height.value
+    const imc = weight / (height * height) 
 
-    const imc = getIds.weight.value / (getIds.height.value * getIds.height.value) 
 
-
-    if (getIds.weight !== "" && getIds.height !== "") {
+    if (weight !== "" && height !== "") {
         if(imc < 18.5){
             getIds.result.innerHTML = `<h3>SEU IMC: ${imc.toFixed(2)}</h3>` + classificationIMC.underWeight
         }else if(imc < 24.9){
